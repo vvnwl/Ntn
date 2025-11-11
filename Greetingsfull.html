@@ -50,7 +50,6 @@ h1 {
 .card:hover {
     margin-top: 2px;
     box-shadow: none;
-   
 }
 
 .date {
@@ -79,7 +78,7 @@ h1 {
     <div class="card">
         <div class="greet" id="greet"></div>
       <div class="date" id="date"></div>
-      
+      </div> 
       </div>
     </div>
     
@@ -92,6 +91,14 @@ var today = new Date();
 document.getElementById('date').innerHTML = today.toDateString();
 }
 
+
+function clock() {
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var seconds = zeros(today.getSeconds());
+
+}
 hrs = today.getHours();
 if (hrs < 12)
         greet = 'Good Morning, James  ';
@@ -106,9 +113,27 @@ document.getElementById('min').innerHTML = minutes;
 document.getElementById('sec').innerHTML = seconds;
 }
 
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
+}
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
 
 function dateTime() {
 date();
+clock();
 setTimeout(dateTime, 500);
 }
 
