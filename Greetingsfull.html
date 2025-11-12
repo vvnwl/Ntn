@@ -3,6 +3,9 @@
 <html lang="en">
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Bebas+Neue" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +59,9 @@ h1 {
 .date {
     display: inline;
     min-width: 162px;
-    font-family: 'Bebas Neue', cursive;
+    font-family: "Courgette", cursive;
+    font-weight: 400;
+    font-style: normal;
     font-size: 2em;
     padding-right: 30px;
 }
@@ -111,11 +116,11 @@ else{
 }
 hrs = today.getHours();
 if (hrs < 12)
-        greet = 'Good Morning  ';
+        greet = 'Good Morning, James';
     else if (hrs >= 12 && hrs <= 17)
-        greet = 'Good Afternoon ';
+        greet = 'Good Afternoon, James';
     else if (hrs >= 17 && hrs <= 24)
-        greet = 'Good Evening  ';
+        greet = 'Good Evening, James';
 // console.log(today.toLocaleTimeString());
 document.getElementById('greet').innerHTML = greet;
 document.getElementById('hour').innerHTML = hour;
