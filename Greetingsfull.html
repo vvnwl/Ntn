@@ -1,1 +1,162 @@
+<!-- original : https://codepen.io/SeanNorton/pen/LWBXQL -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>greeting2</title>
 
+    <style>
+
+        /*CSS RESETS*/
+
+body{
+    background-color: #fff;
+    line-height: 1.6;
+
+}
+
+h1 {
+    margin-top: 0;
+}
+
+
+/*CSS START*/
+
+.full-table {
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+.table-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.card {
+    padding: 10px 25px 10px 25px;
+    border-radius: 10px;
+    background: #B2A496;
+    width: 85vw;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 2px 2px 1px 0px #7a6f64;
+}
+
+.card:hover {
+    margin-top: 2px;
+    box-shadow: none;
+}
+
+.date {
+    display: inline;
+    min-width: 162px;
+    font-family: "Cinzel", serif;
+    font-size: 2em;
+    padding-right: 30px;
+
+.cinzel-<uniquifier> {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+  
+.greet{
+    
+    display:inline;
+    font-family: 'Qwitcher Grypen', cursive;
+    font-size: 4rem;
+     padding-right: 30px;
+
+.qwitcher-grypen-bold {
+  font-family: "Qwitcher Grypen", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+    </style>
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
+<div class="full-table">
+  <div class="table-cell">
+    
+    <div class="card">
+        <div class="greet" id="greet"></div>
+      <div class="date" id="date"></div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+    function date() {
+var today = new Date();
+document.getElementById('date').innerHTML = today.toDateString();
+}
+
+
+function clock() {
+var today = new Date();
+var hour = zeros(twelveHour(today.getHours()));
+var minutes = zeros(today.getMinutes());
+var seconds = zeros(today.getSeconds());
+if(today.getHours() >=12){
+    seconds+=" pm"
+}
+else{
+    seconds+=" am"
+}
+hrs = today.getHours();
+if (hrs < 12)
+        greet = 'Good Morning, James';
+    else if (hrs >= 12 && hrs <= 17)
+        greet = 'Good Afternoon, James';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Good Evening, James';
+// console.log(today.toLocaleTimeString());
+document.getElementById('greet').innerHTML = greet;
+document.getElementById('hour').innerHTML = hour;
+document.getElementById('min').innerHTML = minutes;
+document.getElementById('sec').innerHTML = seconds;
+}
+
+function twelveHour(hour) {
+if (hour > 12) {
+    return hour -= 12 
+} else if (hour === 0) {
+    return hour = 12;
+} else {
+    return hour
+}
+}
+    
+// adds zero infront of single digit number
+function zeros(num) {
+if (num < 10) {
+    num = '0' + num
+};
+return num;
+}
+
+function dateTime() {
+date();
+clock();
+setTimeout(dateTime, 500);
+}
+
+dateTime()
+// END
+</script>
+
+</body>
+</html>
